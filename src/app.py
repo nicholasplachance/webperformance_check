@@ -1,7 +1,8 @@
 # app.py
 
-from flask import Flask, request
+from flask import Flask, request, send_file
 from selenium_script import gather_performance_metrics 
+from generate_report import generate_html_report
 
 class PerformanceTestingMicroservice:
     # constructor method - initialize Flask and setup routes
@@ -12,13 +13,13 @@ class PerformanceTestingMicroservice:
     # responsible for setting up routes for the app - add_url_rule is a Flask method to define routes and associate them with view functions 
     def setup_routes(self):
         self.app.add_url_rule('/', view_func=self.index)
-        self.app.add_url_rule('/test', view_func=self.initate_test, methods=['POST'])
+        self.app.add_url_rule('/test', view_func=self.initiate_test, methods=['POST'])
 
-    # handler for the rool URL ('/')
+    # handler for the root URL ('/')
     def index(self):
         return "Welcome to the Performance Testing Microservice!"
     
-    def initate_test(self):
+    def initiate_test(self):
         # Assuming the client sends a JSON payload with the URL to test
         data = request.json
         if 'url' in data:
@@ -29,15 +30,18 @@ class PerformanceTestingMicroservice:
             for _ in range(repeat):
                 performance_metrics = gather_performance_metrics(url)
                 results.append(performance_metrics)
-            return {"results": results}
+            
+            # Generate HTML report
+            report_path = generate_html_report(results, 'performance_report.html')
+            
+            # Send the generated HTML report file
+            return send_file(report_path, as_attachment=True)
         else:
             return "Error: 'url' parameter missing in request payload", 400
     
     # starts the server to run the app
     def run(self):
         self.app.run(debug=True)
-
-
 
 if __name__ == '__main__':
     performance_testing_microservice = PerformanceTestingMicroservice()
