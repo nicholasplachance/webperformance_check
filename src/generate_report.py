@@ -1,9 +1,8 @@
-# generate_report.py
-
 import json
 import os
 import uuid  # For generating unique identifiers
 import time
+import re  # For replacing invalid characters in filenames
 
 def generate_html_report(performance_metrics, filename):
     # generate HTML report dynamically
@@ -23,6 +22,9 @@ def generate_html_report(performance_metrics, filename):
     # Iterate over each performance metric and add it to the HTML content
     for metric in performance_metrics:
         html_content += f"<p>Load Time: {metric.get('load_time', 'N/A')} ms</p>"
+        html_content += f"<p>TTFB: {metric.get('ttfb', 'N/A')} ms</p>"
+        html_content += f"<p>FCP: {metric.get('fcp', 'N/A')} ms</p>"
+        html_content += f"<p>TTI: {metric.get('tti', 'N/A')} ms</p>"
         # Add more performance metrics here if needed
     
     # Close the HTML tags
@@ -42,7 +44,8 @@ def generate_html_report(performance_metrics, filename):
         os.makedirs(reports_dir)
     
     # Generate a unique filename for the HTML report
-    unique_filename = str(uuid.uuid4()) + '.html'
+    sanitized_time = re.sub(r'[^a-zA-Z0-9]', '_', current_time)  # Replace invalid characters with underscores
+    unique_filename = sanitized_time + '_webspeedinsight.html'
     
     # Specify the path to the HTML report file
     report_path = os.path.join(reports_dir, unique_filename)

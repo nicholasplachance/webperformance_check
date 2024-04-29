@@ -28,12 +28,24 @@ def gather_performance_metrics(url):
     load_time = load_event_end - navigation_start # in milliseconds
     print("Load time:", load_time, "milliseconds")
 
+    # Capture additional metrics (e.g., TTFB, FCP, TTI)
+    # Example:
+    ttfb = timing['responseStart'] - timing['requestStart']
+    fcp = timing['domContentLoadedEventStart'] - navigation_start
+    tti = timing['domInteractive'] - navigation_start
+
+    # Add metrics to performance_metrics dictionary
+
     # close webdriver
+    print("*********** TTFB: ", ttfb)
     print("Closing webdriver...")
     driver.quit()
 
     # Add load time to performance metrics
     performance_metrics['load_time'] = load_time
+    performance_metrics['ttfb'] = ttfb
+    performance_metrics['fcp'] = fcp
+    performance_metrics['tti'] = tti
 
     # Get the directory of the current script
     current_dir = os.path.dirname(os.path.abspath(__file__))
