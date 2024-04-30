@@ -4,7 +4,7 @@ import uuid  # For generating unique identifiers
 import time
 import re  # For replacing invalid characters in filenames
 
-def generate_html_report(performance_metrics, url, filename):
+def generate_html_report(performance_metrics, url, screenshot_path):
     # generate HTML report dynamically
     html_content = f"""
     <html>
@@ -13,12 +13,17 @@ def generate_html_report(performance_metrics, url, filename):
     </head>
     <body>
         <h1>Performance Test Report</h1>
-        <p> URL Tested: {url} </p>
+        <p> URL Tested: </p><a href="{url}">{url}<a/>
     """
     
     # Add current time (CST) to the HTML content
     current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     html_content += f"<p>Test ran at: {current_time} (CST)</p>"
+    
+    # Display screenshot if available
+    if screenshot_path:
+        # Add width and height attributes to limit the size of the screenshot
+        html_content += f'<p>Screenshot:</p><img src="{screenshot_path}" alt="Screenshot" width="500" height="500">'
     
     # Iterate over each performance metric and add it to the HTML content
     for metric in performance_metrics:
@@ -56,3 +61,4 @@ def generate_html_report(performance_metrics, url, filename):
         f.write(html_content)
 
     return report_path
+

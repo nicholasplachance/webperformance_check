@@ -33,7 +33,15 @@ To initiate a performance test, send a POST request to the `/test` endpoint with
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"url": "https://www.example.com", "repeat": 3}' http://127.0.0.1:5000/test
 
-curl -X POST -H "Content-Type: application/json" -d '{"url": "https://www.hellhades.com", "repeat": 3}' http://127.0.0.1:5000/test
+curl -X POST -H "Content-Type: application/json" -d '{"url": "https://www.hellhades.com",}' http://127.0.0.1:5000/test
+```
+
+
+For example, to save the response as a zip file named webspeedinsight_reports.zip, you can use:
+
+```bash
+curl -o webspeedinsight_reports.zip -X POST -H "Content-Type: application/json" -d '{"url": "https://www.hellhades.com"}' http://127.0.0.1:5000/test
+
 ```
 
 Replace `"https://www.example.com"` with the URL you want to test, and `"repeat": 3` with the number of iterations.
