@@ -4,7 +4,7 @@ import uuid  # For generating unique identifiers
 import time
 import re  # For replacing invalid characters in filenames
 
-def generate_html_report(performance_metrics, filename):
+def generate_html_report(performance_metrics, url, filename):
     # generate HTML report dynamically
     html_content = f"""
     <html>
@@ -13,6 +13,7 @@ def generate_html_report(performance_metrics, filename):
     </head>
     <body>
         <h1>Performance Test Report</h1>
+        <p> URL Tested: {url} </p>
     """
     
     # Add current time (CST) to the HTML content

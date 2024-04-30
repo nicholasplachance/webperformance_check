@@ -1,8 +1,9 @@
-# app.py
-
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, make_response
 from selenium_script import gather_performance_metrics 
 from generate_report import generate_html_report
+import os
+import shutil
+import zipfile
 
 class PerformanceTestingMicroservice:
     # constructor method - initialize Flask and setup routes
@@ -10,7 +11,7 @@ class PerformanceTestingMicroservice:
         self.app = Flask(__name__)
         self.setup_routes()
 
-    # responsible for setting up routes for the app - add_url_rule is a Flask method to define routes and associate them with view functions 
+    # responsible for setting up routes for the app
     def setup_routes(self):
         self.app.add_url_rule('/', view_func=self.index)
         self.app.add_url_rule('/test', view_func=self.initiate_test, methods=['POST'])
@@ -24,18 +25,35 @@ class PerformanceTestingMicroservice:
         data = request.json
         if 'url' in data:
             url = data['url']
-            repeat = data.get('repeat', 1)  # Default to run the test once if 'repeat' parameter is not provided
-            repeat = int(repeat)  # Convert the repeat parameter to an integer
+            repeat = int(data.get('repeat', 1))  # Default to run the test once if 'repeat' parameter is not provided
             results = []
             for _ in range(repeat):
                 performance_metrics = gather_performance_metrics(url)
                 results.append(performance_metrics)
             
             # Generate HTML report
-            report_path = generate_html_report(results, 'performance_report.html')
+            report_path = generate_html_report(results, url, 'performance_report.html')
             
-            # Send the generated HTML report file
-            return send_file(report_path, as_attachment=True)
+            # Create a folder for the reports
+            reports_folder = 'webspeedinsight_reports'
+            if not os.path.exists(reports_folder):
+                os.makedirs(reports_folder)
+
+            # Move the HTML report to the reports folder
+            shutil.move(report_path, os.path.join(reports_folder, 'performance_report.html'))
+
+            # Zip the reports folder
+            zip_filename = 'webspeedinsight_reports.zip'
+            zip_path = os.path.abspath(zip_filename)
+            with zipfile.ZipFile(zip_path, 'w') as zipf:
+                for root, dirs, files in os.walk(reports_folder):
+                    for file in files:
+                        zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), reports_folder))
+            
+            # Send the zip file as an attachment
+            response = make_response(send_file(zip_path, as_attachment=True))
+            response.headers['Content-Disposition'] = f'attachment; filename={zip_filename}'
+            return response
         else:
             return "Error: 'url' parameter missing in request payload", 400
     
