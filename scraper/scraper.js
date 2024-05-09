@@ -15,6 +15,12 @@ const puppeteer = require('puppeteer');
   const url = page.url();
   console.log('URL visited:', url);
 
+  const performanceMetrics = page.metrics()
+  const timestamp = (await performanceMetrics).Timestamp
+  const taskDuration = (await performanceMetrics).TaskDuration
+  console.log("Task duration: ", taskDuration);
+  console.log("Timestamp: ", timestamp);
+
   // Close the browser
   await browser.close();
 })();
