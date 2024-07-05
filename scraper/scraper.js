@@ -1,26 +1,58 @@
 const puppeteer = require('puppeteer');
+const fs = require('fs');
+const path = require('path');
 
 (async () => {
+  const url = process.argv[2];
+  if (!url) {
+    console.error('Please provide a URL as an argument');
+    process.exit(1);
+  }
+
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
-  // Navigate to the page
-  await page.goto('https://hellhades.com');
+  try {
+    console.log(`Navigating to URL: ${url}`);
+    await page.goto(url, { waitUntil: 'networkidle2' });
 
-  // Get and print the page title
-  const title = await page.title();
-  console.log('Page title:', title);
+    const title = await page.title();
+    console.log('Page title:', title);
 
-  // Get and print the URL of the page to ensure it is the intended page
-  const url = page.url();
-  console.log('URL visited:', url);
+    const visitedUrl = page.url();
+    console.log('URL visited:', visitedUrl);
 
-  const performanceMetrics = page.metrics()
-  const timestamp = (await performanceMetrics).Timestamp
-  const taskDuration = (await performanceMetrics).TaskDuration
-  console.log("Task duration: ", taskDuration);
-  console.log("Timestamp: ", timestamp);
+    const performanceMetrics = await page.metrics();
+    const timestamp = performanceMetrics.Timestamp;
+    const taskDuration = performanceMetrics.TaskDuration;
+    console.log("Task duration: ", taskDuration);
+    console.log("Timestamp: ", timestamp);
 
-  // Close the browser
-  await browser.close();
+    const metrics = {
+      title: title,
+      url: visitedUrl,
+      taskDuration: taskDuration,
+      timestamp: timestamp
+    };
+
+    const filePath = path.resolve(__dirname, '../data/raw_metrics.json');
+    console.log(`Writing metrics to file: ${filePath}`);
+    fs.writeFileSync(filePath, JSON.stringify(metrics, null, 2));
+    console.log('Metrics written successfully');
+
+  } catch (error) {
+    console.error('Error navigating to the URL:', error);
+    process.exit(1);
+  } finally {
+    await browser.close();
+  }
 })();
+
+
+
+
+
+// TODO
+// METRICS TO GRAB
+// Speed Index | TTFB | FCP | LCP | Waterfall
+

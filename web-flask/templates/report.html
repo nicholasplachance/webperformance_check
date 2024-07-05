@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Report</title>
+</head>
+<body>
+  <h1>Test Report</h1>
+  {% if data %}
+    <p><strong>Page Title:</strong> {{ data.title }}</p>
+    <p><strong>URL Visited:</strong> {{ data.url }}</p>
+    <p><strong>Task Duration:</strong> {{ data.taskDuration }}</p>
+    <p><strong>Timestamp:</strong> {{ data.timestamp }}</p>
+  {% else %}
+    <p>No data available. Please run a test.</p>
+  {% endif %}
+  <a href="{{ url_for('index') }}">Run another test</a>
+</body>
+</html>
