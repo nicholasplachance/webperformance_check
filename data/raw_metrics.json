@@ -1,0 +1,1096 @@
+{
+  "title": "HellHades - News, Guides and Tools for Raid: Shadow Legends",
+  "url": "https://hellhades.com/",
+  "taskDuration": "633.41 ms",
+  "timestamp": "1/9/1970, 8:04:48 PM",
+  "ttfb": "116 ms",
+  "fcp": "460 ms",
+  "lcp": "1348 ms",
+  "heapAllocation": "80%",
+  "requests": [
+    {
+      "url": "https://hellhades.com/",
+      "method": "GET",
+      "type": "document",
+      "startTime": 1720149032859,
+      "duration": 116
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/rsl-assets/styles/min/style-fe.min.css?ver=6.5.5",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149032984,
+      "duration": 41
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?ver=6.4.0",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149032984,
+      "duration": 130
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149032984,
+      "duration": 40
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-core/css/comment-form.min.css?ver=5.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149032984,
+      "duration": 42
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-core/css/privacy.min.css?ver=5.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149032984,
+      "duration": 44
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-core/css/faqs.min.css?ver=5.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149032984,
+      "duration": 42
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/assets/css/style.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149032984,
+      "duration": 44
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada-Child-Theme/style.css?ver=1.38",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033001,
+      "duration": 31
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/fullwidth-md.min.css?ver=3.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 30
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/icon-md.min.css?ver=3.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 30
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/grid-md.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 30
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/image-md.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 32
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/social-sharing-md.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 32
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/social-links-md.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 31
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/title-md.min.css?ver=3.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 31
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/facebook-page-md.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 32
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/twitter-timeline-md.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 41
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/flickr-md.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 34
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/tagcloud-md.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 41
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/instagram-md.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 33
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/meta-md.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 32
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/layout-columns-md.min.css?ver=3.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 37
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/off-canvas-md.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033002,
+      "duration": 37
+    },
+    {
+      "url": "https://hellhades.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033002,
+      "duration": 71
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js?ver=1.4.1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033002,
+      "duration": 115
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/fonts/icomoon/awb-icons.woff",
+      "method": "GET",
+      "type": "font",
+      "startTime": 1720149033003,
+      "duration": 39
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/fonts/fontawesome/webfonts/fa-brands-400.woff2",
+      "method": "GET",
+      "type": "font",
+      "startTime": 1720149033003,
+      "duration": 33
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/fonts/fontawesome/webfonts/fa-regular-400.woff2",
+      "method": "GET",
+      "type": "font",
+      "startTime": 1720149033003,
+      "duration": 39
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/fonts/fontawesome/webfonts/fa-solid-900.woff2",
+      "method": "GET",
+      "type": "font",
+      "startTime": 1720149033003,
+      "duration": 36
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/nunito/v26/XRXV3I6Li01BKofINeaB.woff2",
+      "method": "GET",
+      "type": "font",
+      "startTime": 1720149033003,
+      "duration": 110
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-24BJXVXDSC",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033003,
+      "duration": 291
+    },
+    {
+      "url": "https://s.nitropay.com/ads-728.js",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033003,
+      "duration": 370
+    },
+    {
+      "url": "https://hellhades.com/wp-content/uploads/2020/11/bignoodletitling.woff2",
+      "method": "GET",
+      "type": "font",
+      "startTime": 1720149033003,
+      "duration": 41
+    },
+    {
+      "url": "https://streambuff.gg/js/init.js",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033019,
+      "duration": 297
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/rsl-assets/styles/min/js-fe.min.js?ver=6.5.5",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033019,
+      "duration": 25
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/library/jquery.countdown.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033019,
+      "duration": 44
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/awb-tabs-widget.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033019,
+      "duration": 48
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/awb-vertical-menu-widget.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033019,
+      "duration": 46
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/cssua.js?ver=2.1.28",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033019,
+      "duration": 48
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/modernizr.js?ver=3.3.1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033019,
+      "duration": 52
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033019,
+      "duration": 48
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/isotope.js?ver=3.0.4",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033019,
+      "duration": 47
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/packery.js?ver=2.0.0",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 49
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/swiper.js?ver=8.3.2",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 55
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/bootstrap.transition.js?ver=3.3.6",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 49
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/bootstrap.tooltip.js?ver=3.3.5",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 56
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.requestAnimationFrame.js?ver=1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 55
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.easing.js?ver=1.3",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 55
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.fitvids.js?ver=1.1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 69
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.flexslider.js?ver=2.7.2",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 52
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.ilightbox.js?ver=2.2.3",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 58
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.infinitescroll.js?ver=2.1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 54
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.mousewheel.js?ver=3.0.6",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 56
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.placeholder.js?ver=2.0.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 44
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.fade.js?ver=1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 44
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/imagesLoaded.js?ver=3.1.8",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 60
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/fusion-parallax.js?ver=1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 58
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/fusion-video-general.js?ver=1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 44
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/fusion-video-bg.js?ver=1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033020,
+      "duration": 58
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-lightbox.js?ver=1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 56
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-tooltip.js?ver=1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 56
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-sharing-box.js?ver=1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 55
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-flexslider.js?ver=6.5.5",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 60
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-blog.js?ver=1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 58
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.sticky-kit.js?ver=1.1.2",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 56
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/fusion-youtube.js?ver=2.2.1",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 57
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/lazysizes.js?ver=6.5.5",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 60
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/assets/min/js/general/avada-general-footer.js?ver=7.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 55
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/assets/min/js/general/avada-quantity.js?ver=7.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 56
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/assets/min/js/general/avada-crossfade-images.js?ver=7.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 56
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/assets/min/js/general/avada-select.js?ver=7.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 59
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/assets/min/js/general/avada-live-search.js?ver=7.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 56
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-alert.js?ver=6.5.5",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 59
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/general/awb-off-canvas.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 56
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/general/awb-background-slider.js?ver=6.5.5",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 59
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-animations.js?ver=6.5.5",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 65
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-menu.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 57
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/general/awb-mega-menu.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033021,
+      "duration": 57
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-button.js?ver=6.5.5",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 57
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/library/jquery.textillate.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 56
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-title.js?ver=6.5.5",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 61
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/library/lite-yt-embed.js?ver=6.5.5",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 56
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-recent-posts.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 61
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-countdown.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 58
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-legacy-mega-menu.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 59
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-container.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 57
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/assets/min/js/general/avada-drop-down.js?ver=7.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 62
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/assets/min/js/general/avada-to-top.js?ver=7.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 58
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/assets/min/js/general/avada-custom-header.js?ver=7.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 59
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/assets/min/js/library/bootstrap.scrollspy.js?ver=7.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 76
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/assets/min/js/general/avada-scrollspy.js?ver=7.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 78
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-responsive-typography.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 61
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-scroll-to-anchor.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033022,
+      "duration": 64
+    },
+    {
+      "url": "https://hellhades.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-general-global.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033023,
+      "duration": 58
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-video.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033023,
+      "duration": 60
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-column.js?ver=3.11.7",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033023,
+      "duration": 60
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/fullwidth-sm.min.css?ver=3.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033023,
+      "duration": 179
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/icon-sm.min.css?ver=3.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033023,
+      "duration": 179
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/grid-sm.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033023,
+      "duration": 180
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/image-sm.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033023,
+      "duration": 180
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/social-sharing-sm.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033023,
+      "duration": 178
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/social-links-sm.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033023,
+      "duration": 180
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/title-sm.min.css?ver=3.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033023,
+      "duration": 180
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/facebook-page-sm.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033023,
+      "duration": 180
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/twitter-timeline-sm.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033023,
+      "duration": 180
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/flickr-sm.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033023,
+      "duration": 180
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/tagcloud-sm.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033023,
+      "duration": 180
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/instagram-sm.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033024,
+      "duration": 179
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/meta-sm.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033024,
+      "duration": 179
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/layout-columns-sm.min.css?ver=3.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033024,
+      "duration": 179
+    },
+    {
+      "url": "https://hellhades.com/wp-content/plugins/fusion-builder/assets/css/media/off-canvas-sm.min.css?ver=7.11.7",
+      "method": "GET",
+      "type": "stylesheet",
+      "startTime": 1720149033024,
+      "duration": 179
+    },
+    {
+      "url": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27152%27%20height%3D%2759%27%20viewBox%3D%270%200%20152%2059%27%3E%3Crect%20width%3D%27152%27%20height%3D%2759%27%20fill-opacity%3D%220%22%2F%3E%3C%2Fsvg%3E",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033132,
+      "duration": 0
+    },
+    {
+      "url": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%271380%27%20height%3D%27100%27%20viewBox%3D%270%200%201380%20100%27%3E%3Crect%20width%3D%271380%27%20height%3D%27100%27%20fill-opacity%3D%220%22%2F%3E%3C%2Fsvg%3E",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033132,
+      "duration": 0
+    },
+    {
+      "url": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27250%27%20height%3D%27250%27%20viewBox%3D%270%200%20250%20250%27%3E%3Crect%20width%3D%27250%27%20height%3D%27250%27%20fill-opacity%3D%220%22%2F%3E%3C%2Fsvg%3E",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033132,
+      "duration": 0
+    },
+    {
+      "url": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27728%27%20height%3D%2790%27%20viewBox%3D%270%200%20728%2090%27%3E%3Crect%20width%3D%27728%27%20height%3D%2790%27%20fill-opacity%3D%220%22%2F%3E%3C%2Fsvg%3E",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033132,
+      "duration": 0
+    },
+    {
+      "url": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%271280%27%20height%3D%27720%27%20viewBox%3D%270%200%201280%20720%27%3E%3Crect%20width%3D%271280%27%20height%3D%27720%27%20fill-opacity%3D%220%22%2F%3E%3C%2Fsvg%3E",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033132,
+      "duration": 0
+    },
+    {
+      "url": "data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%271204%27%20height%3D%2711%27%20viewBox%3D%270%200%201204%2011%27%3E%3Crect%20width%3D%271204%27%20height%3D%2711%27%20fill-opacity%3D%220%22%2F%3E%3C%2Fsvg%3E",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033132,
+      "duration": 0
+    },
+    {
+      "url": "https://hellhades.com/wp-content/uploads/2022/02/Background_new_2.jpg",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033199,
+      "duration": 4
+    },
+    {
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033199,
+      "duration": 0
+    },
+    {
+      "url": "https://hellhades.com/wp-content/uploads/2022/08/Raid-Shadow-Legends.jpg",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033200,
+      "duration": 3
+    },
+    {
+      "url": "https://hellhades.com/wp-content/uploads/2022/08/Dragon-Champions.jpg",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033200,
+      "duration": 4
+    },
+    {
+      "url": "https://hellhades.com/wp-content/uploads/2023/11/dragonheir-homepage-2.jpg",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033200,
+      "duration": 4
+    },
+    {
+      "url": "https://hellhades.com/wp-content/uploads/2022/08/Arclight-Rumble.jpg",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033200,
+      "duration": 4
+    },
+    {
+      "url": "https://hellhades.com/wp-content/uploads/2020/10/HH-Gaming.png",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033231,
+      "duration": 31
+    },
+    {
+      "url": "https://i.ytimg.com/vi/S-7DyKa2P7c/sddefault.jpg",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033249,
+      "duration": 112
+    },
+    {
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-24BJXVXDSC&gtm=45je4730v884120912za200&_p=1720149033122&gcd=13l3l3l3l1&npa=0&dma=0&tag_exp=0&cid=811398540.1720149033&ul=en-us&sr=2195x1235&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CChromium%3B124.0.6367.91&uamb=0&uam=&uap=Windows&uapv=15.0.0&uaw=0&are=1&frm=0&pscdl=&_s=1&sid=1720149033&sct=1&seg=0&dl=https%3A%2F%2Fhellhades.com%2F&dt=HellHades%20-%20News%2C%20Guides%20and%20Tools%20for%20Raid%3A%20Shadow%20Legends&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=454&_z=fetch",
+      "method": "POST",
+      "type": "fetch",
+      "startTime": 1720149033313,
+      "duration": 292
+    },
+    {
+      "url": "https://sb.scorecardresearch.com/cs/20631572/beacon.js",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033592,
+      "duration": 175
+    },
+    {
+      "url": "https://wrappers.geoedge.be/wrapper.html",
+      "method": "GET",
+      "type": "fetch",
+      "startTime": 1720149033592,
+      "duration": 129
+    },
+    {
+      "url": "https://rumcdn.geoedge.be/b0b01868-2045-4a3d-b8b0-db8e6cd0649d/grumi.js",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033597,
+      "duration": 215
+    },
+    {
+      "url": "https://btloader.com/tag?o=6278260873756672&upapi=true",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033597,
+      "duration": 95
+    },
+    {
+      "url": "https://rumcdn.geoedge.be/b0b01868-2045-4a3d-b8b0-db8e6cd0649d/grumi-ip.js",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033597,
+      "duration": 201
+    },
+    {
+      "url": "https://securepubads.g.doubleclick.net/tag/js/gpt.js",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033597,
+      "duration": 494
+    },
+    {
+      "url": "https://s.nitropay.com/gpp-bf4f755.min.js",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033600,
+      "duration": 38
+    },
+    {
+      "url": "https://c.amazon-adsystem.com/aax2/apstag.js",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033600,
+      "duration": 122
+    },
+    {
+      "url": "https://s.nitropay.com/1.gif?x=1&adslot=",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033603,
+      "duration": 30
+    },
+    {
+      "url": "https://hellhades.com/wp-content/uploads/2022/10/Merch-Button.png",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033604,
+      "duration": 26
+    },
+    {
+      "url": "https://hellhades.com/wp-content/uploads/2024/03/hh_sponor_banner_long_2.jpg",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033604,
+      "duration": 28
+    },
+    {
+      "url": "https://consent.nitrocnct.com/additional-consent-providers.csv",
+      "method": "GET",
+      "type": "xhr",
+      "startTime": 1720149033649,
+      "duration": 142
+    },
+    {
+      "url": "https://api.btloader.com/mw/state?bt_env=prod",
+      "method": "GET",
+      "type": "fetch",
+      "startTime": 1720149033697,
+      "duration": 95
+    },
+    {
+      "url": "https://ad-delivery.net/px.gif?ch=2",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033697,
+      "duration": 110
+    },
+    {
+      "url": "https://ad.doubleclick.net/favicon.ico?ad=300x250&ad_box_=1&adnet=1&showad=1&size=250x250",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033697,
+      "duration": 385
+    },
+    {
+      "url": "https://ad-delivery.net/px.gif?ch=1&e=0.4727747877103583",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033697,
+      "duration": 110
+    },
+    {
+      "url": "https://config.aps.amazon-adsystem.com/configs/da657530-03e5-4306-95bc-d4eb370426c9",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033741,
+      "duration": 178
+    },
+    {
+      "url": "https://c.amazon-adsystem.com/cdn/prod/config?src=600&u=https%3A%2F%2Fhellhades.com&pubid=da657530-03e5-4306-95bc-d4eb370426c9",
+      "method": "GET",
+      "type": "xhr",
+      "startTime": 1720149033741,
+      "duration": 17
+    },
+    {
+      "url": "https://c.amazon-adsystem.com/bao-csm/aps-comm/aps_csm.js",
+      "method": "GET",
+      "type": "xhr",
+      "startTime": 1720149033741,
+      "duration": 94
+    },
+    {
+      "url": "https://cdn-ima.33across.com/ima.js",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033760,
+      "duration": 120
+    },
+    {
+      "url": "https://sb.scorecardresearch.com/internal-cs/default/beacon.js",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033768,
+      "duration": 14
+    },
+    {
+      "url": "https://sb.scorecardresearch.com/b?c1=2&c2=20631572&cs_it=b8&cv=4.0.0%2B2301240627&ns__t=1720149033781&ns_c=UTF-8&c7=https%3A%2F%2Fhellhades.com%2F&c8=HellHades%20-%20News%2C%20Guides%20and%20Tools%20for%20Raid%3A%20Shadow%20Legends&c9=",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033782,
+      "duration": 77
+    },
+    {
+      "url": "https://rumcdn.geoedge.be/b0b01868-2045-4a3d-b8b0-db8e6cd0649d/grumi.js",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149033812
+    },
+    {
+      "url": "https://sb.scorecardresearch.com/b2?c1=2&c2=20631572&cs_it=b8&cv=4.0.0%2B2301240627&ns__t=1720149033781&ns_c=UTF-8&c7=https%3A%2F%2Fhellhades.com%2F&c8=HellHades%20-%20News%2C%20Guides%20and%20Tools%20for%20Raid%3A%20Shadow%20Legends&c9=",
+      "method": "GET",
+      "type": "image",
+      "startTime": 1720149033859,
+      "duration": 84
+    },
+    {
+      "url": "https://api.btloader.com/country?o=6278260873756672",
+      "method": "GET",
+      "type": "fetch",
+      "startTime": 1720149034083,
+      "duration": 26
+    },
+    {
+      "url": "https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202407020101/pubads_impl.js?cb=31085076",
+      "method": "GET",
+      "type": "script",
+      "startTime": 1720149034100,
+      "duration": 65
+    },
+    {
+      "url": "https://api.btloader.com/pv?tid=1nRsJEgW&w=5349294738505728&o=6278260873756672&cv=2.1.46-1-ge6dd43d&widget=false&r=false&vr=800x600&pageURL=https%3A%2F%2Fhellhades.com%2F&sid=0n77qQGR&pm=false&upapi=true",
+      "method": "GET",
+      "type": "xhr",
+      "startTime": 1720149034103,
+      "duration": 34
+    },
+    {
+      "url": "https://hellhades.com/wp-content/uploads/2022/02/favicon.ico",
+      "method": "GET",
+      "type": "other",
+      "startTime": 1720149034208,
+      "duration": 31
+    }
+  ]
+}

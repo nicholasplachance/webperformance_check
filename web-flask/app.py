@@ -35,7 +35,7 @@ def report():
         with open('../data/raw_metrics.json') as f:
             try:
                 data = json.load(f)
-                print('Metrics loaded:', data)
+                # print('Metrics loaded:', data)
             except json.JSONDecodeError as e:
                 flash(f'Error reading the metrics file: {e}')
                 data = {}

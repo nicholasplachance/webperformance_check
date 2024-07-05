@@ -4,13 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web Performance Check</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    /* Add CSS for the modal directly here for simplicity */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 300px;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .loader {
+      border: 4px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 4px solid #3498db;
+      width: 30px;
+      height: 30px;
+      animation: spin 2s linear infinite;
+      margin: auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
   <h1>Web Performance Check</h1>
-  <form action="{{ url_for('run_test') }}" method="post">
+  <form id="test-form" action="{{ url_for('run_test') }}" method="post">
     <label for="url">Enter URL:</label>
     <input type="text" id="url" name="url" required>
     <button type="submit">Run Test</button>
   </form>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <!-- Modal Structure -->
+  <div id="loadingModal" class="modal">
+    <div class="modal-content">
+      <div class="loader"></div>
+      <p>Running the test, please wait...</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('test-form').addEventListener('submit', function(event) {
+      var modal = document.getElementById('loadingModal');
+      modal.style.display = 'flex'; // Show the modal
+    });
+  </script>
 </body>
 </html>
