@@ -137,3 +137,12 @@ a:hover {
   visibility: visible;
   opacity: 1;
 }
+
+.add-button {
+    margin: 10px 0;
+}
+
+.report-content {
+    display: flex;
+    flex-direction: column;
+}

@@ -6,7 +6,6 @@
   <title>Test Report</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <style>
-    /* Additional styling for the report modal */
     .modal {
       display: none;
       position: fixed;
@@ -61,16 +60,16 @@
       padding: 5px;
       position: absolute;
       z-index: 1;
-      bottom: 125%; /* Position the tooltip above the text */
+      bottom: 125%;
       left: 50%;
-      margin-left: -110px; /* Use half of the width (220/2 = 110), to center it */
+      margin-left: -110px;
       opacity: 0;
       transition: opacity 0.3s;
     }
     .tooltip .tooltiptext::after {
       content: "";
       position: absolute;
-      top: 100%; /* At the bottom of the tooltip */
+      top: 100%;
       left: 50%;
       margin-left: -5px;
       border-width: 5px;
@@ -113,87 +112,83 @@
 </head>
 <body>
   <div class="report-header">
-    <h1>Test Report</h1>
-    <p><strong>Page Title:</strong> {{ data.title }}</p>
-    <p><strong>URL Visited:</strong> {{ data.url }}</p>
-    <p><strong class="tooltip">Timestamp:
-        <span class="tooltiptext">Time when the metrics were recorded.</span>
-      </strong> {{ data.timestamp }}</p>
-    <p><strong class="tooltip">Task Duration (ms):
-      <span class="tooltiptext">Total time spent executing JavaScript tasks.</span>
-    </strong> {{ data.taskDuration }}</p>
-    <p><strong class="tooltip">TTFB (ms):
-      <span class="tooltiptext">Time to First Byte: Time taken to receive the first byte of the response from the server.</span>
-    </strong> {{ data.ttfb }}</p>
-    <p><strong class="tooltip">FCP (ms):
-      <span class="tooltiptext">First Contentful Paint: Time taken for the first piece of content to be rendered on the screen.</span>
-    </strong> {{ data.fcp }}</p>
-    <p><strong class="tooltip">LCP (ms):
-      <span class="tooltiptext">Largest Contentful Paint: Time taken for the largest content element in the viewport to be rendered.</span>
-    </strong> {{ data.lcp }}</p>
-    <p><strong class="tooltip">Javascript Heap Allocation (ms):
-      <span class="tooltiptext">Percentage of heap memory used by JavaScript.</span>
-    </strong> {{ data.heapAllocation }}</p>
+    <h1>Test Report Summary</h1>
+    <p><strong>Average Task Duration (ms):</strong> {{ average_metrics.taskDuration }}</p>
+    <p><strong>Average TTFB (ms):</strong> {{ average_metrics.ttfb }}</p>
+    <p><strong>Average FCP (ms):</strong> {{ average_metrics.fcp }}</p>
+    <p><strong>Average LCP (ms):</strong> {{ average_metrics.lcp }}</p>
+    <p><strong>Average Heap Allocation (%):</strong> {{ average_metrics.heapAllocation }}</p>
   </div>
-  
+
   <div class="report-content">
-    <h2>Network Requests (Waterfall)</h2>
-    <p class="tooltip">Waterfall chart:
-      <span class="tooltiptext">Shows the sequence and timing of resource loading for the page.</span>
-    </p>
-    <div class="waterfall-table">
-      <table>
-        <thead>
-          <tr>
-            <th>URL</th>
-            <th>Method</th>
-            <th>Type</th>
-            <th>Start Time (ms)</th>
-            <th>End Time (ms)</th>
-            <th>Duration (ms)</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for request in data.requests %}
-            <tr>
-              <td class="url-column">{{ request.url }}</td>
-              <td>{{ request.method }}</td>
-              <td>{{ request.type }}</td>
-              <td>{{ request.startTime }}</td>
-              <td>{{ request.endTime }}</td>
-              <td>{{ request.duration }}</td>
-            </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
+    <h2>Individual Page Reports</h2>
+    {% for page in data %}
+      <h3 class="tooltip"><p>{{ page.title }}</p> <span class="tooltiptext">Click to see details</span></h3>
+      <div id="modal-{{ loop.index }}" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="document.getElementById('modal-{{ loop.index }}').style.display='none'">&times;</span>
+          <h1>Test Report for <a href="{{ page.url }}" target="_blank">{{ page.title }}</a></h1>
+          <p><strong>URL:</strong> <a href="{{ page.url }}" target="_blank">{{ page.url }}</a></p>
+          <p><strong>Timestamp:</strong> {{ page.timestamp }}</p>
+          <p><strong>Task Duration (ms):</strong> {{ page.taskDuration }}</p>
+          <p><strong>TTFB (ms):</strong> {{ page.ttfb }}</p>
+          <p><strong>FCP (ms):</strong> {{ page.fcp }}</p>
+          <p><strong>LCP (ms):</strong> {{ page.lcp }}</p>
+          <p><strong>Heap Allocation (%):</strong> {{ page.heapAllocation }}</p>
+          <h2>Network Requests (Waterfall)</h2>
+          <div class="waterfall-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>URL</th>
+                  <th>Method</th>
+                  <th>Type</th>
+                  <th>Start Time (ms)</th>
+                  <th>End Time (ms)</th>
+                  <th>Duration (ms)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for request in page.requests %}
+                  <tr>
+                    <td class="url-column">{{ request.url }}</td>
+                    <td>{{ request.method }}</td>
+                    <td>{{ request.type }}</td>
+                    <td>{{ request.startTime }}</td>
+                    <td>{{ request.endTime }}</td>
+                    <td>{{ request.duration }}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
   </div>
 
   <a href="{{ url_for('index') }}">Run another test</a>
 
   <script>
-    // Get the modal
-    var modal = document.getElementById("reportModal");
+    // Get all modals
+    var modals = document.getElementsByClassName("modal");
 
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal 
-    window.onload = function() {
-      modal.style.display = "block";
-    };
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    };
+    // When the user clicks the button, open the corresponding modal
+    var tooltips = document.getElementsByClassName("tooltip");
+    for (let i = 0; i < tooltips.length; i++) {
+      tooltips[i].onclick = function() {
+        modals[i].style.display = "flex";
+      }
+    }
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
+      for (let i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+          modals[i].style.display = "none";
+        }
       }
-    };
+    }
   </script>
 </body>
 </html>

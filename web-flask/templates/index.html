@@ -6,7 +6,6 @@
   <title>Web Performance Check</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <style>
-    /* Add CSS for the modal directly here for simplicity */
     .modal {
       display: none;
       position: fixed;
@@ -49,8 +48,10 @@
 <body>
   <h1>Web Performance Check</h1>
   <form id="test-form" action="{{ url_for('run_test') }}" method="post">
-    <label for="url">Enter URL:</label>
-    <input type="text" id="url" name="url" required>
+    <label for="base-url">Enter Base URL:</label>
+    <input type="text" id="base-url" name="base_url" required>
+    <button class="add-button" type="button" onclick="addPageInput()">Add Page</button>
+    <div id="pages-container"></div>
     <button type="submit">Run Test</button>
   </form>
   {% with messages = get_flashed_messages() %}
@@ -72,6 +73,15 @@
   </div>
 
   <script>
+    function addPageInput() {
+      const container = document.getElementById('pages-container');
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.name = 'pages[]';
+      input.placeholder = 'Enter additional page path (e.g., /about)';
+      container.appendChild(input);
+    }
+
     document.getElementById('test-form').addEventListener('submit', function(event) {
       var modal = document.getElementById('loadingModal');
       modal.style.display = 'flex'; // Show the modal
