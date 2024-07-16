@@ -50,7 +50,7 @@ const path = require('path');
         fcp: `${fcp} ms`,
         lcp: `${lcp} ms`,
         heapAllocation: `${Math.round(heapAllocation)}%`,
-        requests: requests.map(req => ({ url: req.url, method: req.method, type: req.type, startTime: req.startTime, duration: req.duration }))
+        // requests: requests.map(req => ({ url: req.url, method: req.method, type: req.type, startTime: req.startTime, duration: req.duration }))
       };
 
       results.push(metrics);
