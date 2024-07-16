@@ -1,3 +1,4 @@
+# web-flask/app.py
 from flask import Flask, request, redirect, url_for, render_template, flash, jsonify
 import subprocess
 import json
@@ -7,7 +8,7 @@ import logging
 import statistics
 
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'
+app.secret_key = os.getenv("SECRET_KEY", "supersecretkey")
 
 logging.basicConfig(level=logging.INFO)
 
@@ -57,7 +58,6 @@ def report():
         with open('../data/raw_metrics.json') as f:
             try:
                 data = json.load(f)
-                # Calculate averages
                 metrics = ['ttfb', 'fcp', 'lcp', 'taskDuration', 'heapAllocation']
                 average_metrics = {}
                 for metric in metrics:
