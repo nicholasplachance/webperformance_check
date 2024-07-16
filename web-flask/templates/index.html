@@ -68,7 +68,8 @@
   <div id="loadingModal" class="modal">
     <div class="modal-content">
       <div class="loader"></div>
-      <p>Running the test, please wait...</p>
+      <p id="modal-text">Running the test, please wait...</p>
+      <ul id="pages-list"></ul> <!-- New element to display pages -->
     </div>
   </div>
 
@@ -83,8 +84,51 @@
     }
 
     document.getElementById('test-form').addEventListener('submit', function(event) {
+      // Prevent the form from submitting immediately
+      event.preventDefault();
+
+      // Get the base URL from the form input
+      var baseUrl = document.getElementById('base-url').value;
+
+      // Get all additional page paths entered by the user
+      var pagesInputs = document.getElementsByName('pages[]');
+      var pages = [];
+      for (var i = 0; i < pagesInputs.length; i++) {
+        if (pagesInputs[i].value.trim() !== '') {
+          pages.push(pagesInputs[i].value.trim());
+        }
+      }
+
+      // Prepare the text for modal display
+      var modalText = document.getElementById('modal-text');
+      var modalPagesList = document.getElementById('pages-list');
+      
+      // Clear previous content
+      modalPagesList.innerHTML = '';
+
+      // Update base URL in the modal text
+      modalText.textContent = `Running test for ${baseUrl}, please wait...`;
+
+      // Add base URL to the list
+      var baseUrlItem = document.createElement('li');
+      baseUrlItem.textContent = `Base URL: ${baseUrl}`;
+      modalPagesList.appendChild(baseUrlItem);
+
+      // Add additional pages to the list
+      pages.forEach(function(page) {
+        var pageItem = document.createElement('li');
+        pageItem.textContent = `Additional Page: ${page}`;
+        modalPagesList.appendChild(pageItem);
+      });
+
+      // Show the modal
       var modal = document.getElementById('loadingModal');
-      modal.style.display = 'flex'; // Show the modal
+      modal.style.display = 'flex';
+
+      // Submit the form after preparing modal content
+      setTimeout(function() {
+        document.getElementById('test-form').submit();
+      }, 2000); // Adjust delay as needed for better user experience
     });
   </script>
 </body>
