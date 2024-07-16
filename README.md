@@ -1,66 +1,88 @@
-# Performance Testing Microservice
+# Web Performance Check Tool
 
-Performance Testing Microservice is a Flask-based web application that allows users to conduct performance tests on web pages. It utilizes Selenium for web scraping to gather performance metrics such as load time.
+## Overview
+The Web Performance Check Tool automates the process of testing web performance. It combines web scraping, data analysis, and a user-friendly web interface to provide comprehensive insights into website performance metrics.
 
 ## Features
+- **Web Scraping**: Uses Node.js and Puppeteer to collect performance metrics from websites.
+- **Data Analysis**: Utilizes Python to process and analyze the collected data.
+- **Web Interface**: Employs Flask to provide a web interface for running tests and viewing reports.
 
-- Conduct performance tests on web pages
-- Measure load time for each test iteration
-- Specify the number of iterations for a test
+## Project Structure
+    webperformance_check/
+    ├── analysis-python/
+    │ ├── analyze_data.py
+    │ ├── requirements.txt
+    ├── data/
+    │ ├── raw_metrics.json
+    │ ├── schema.sql
+    ├── scraper/
+    │ ├── index.js
+    │ ├── package.json
+    │ ├── scraper.js
+    ├── web-flask/
+    │ ├── app.py
+    │ ├── config.py
+    │ ├── requirements.txt
+    │ ├── static/
+    │ │ ├── style.css
+    │ ├── templates/
+    │ │ ├── index.html
+    │ │ ├── report.html
+    ├── README.md
 
-## Setup
 
-1. **Clone the repository:**
+## Prerequisites
+- **Node.js** (version 14.x or higher)
+- **Python 3.x**
+- **npm** (Node Package Manager)
+- **pip** (Python Package Installer)
+
+## Setup Instructions
+
+### Setting Up the Node.js Scraper
+1. Navigate to the `scraper` directory:
    ```bash
-   git clone <repository-url>
-   cd PerformanceTestingMicroservice
-   ```
+   cd scraper
+2. Install the required npm packages:
+    ```
+        npm install
 
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Setting Up the Python Analysis
+1. Navigate to the `analysis-python` directory:
+    ```
+        cd analysis-python
+2. Install the required Python packages:
+    ```
+        pip install -r requirements.txt
 
-3. **Start the server:**
-   ```bash
-   python app.py
-   ```
+### Setting Up the Flask Web Server
+1. Navigate to the `web-flask` directory:
+    ```
+        cd web-flask
+2. Install the required Python packages:
+    ```
+        pip install -r requirements.txt
+3. Set up and run the Flask application:
+    ```
+       export FLASK_APP=app.py
+       flask run
 
 ## Usage
 
-To initiate a performance test, send a POST request to the `/test` endpoint with a JSON payload containing the URL to test and the number of iterations (optional). Here's an example using cURL:
+### Running the Web Scraper
+1. Start the Node.js server:
+   ```
+    node scraper/index.js
+2. Navigate to http://localhost:3000/start-scraping to initiate the scraping process.
 
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{"url": "https://www.example.com", "repeat": 3}' http://127.0.0.1:5000/test
+### Analyzing Data
+1. Run the Python analysis script:
+    ```
+        python analysis-python/analyze_data.py
 
-curl -X POST -H "Content-Type: application/json" -d '{"url": "https://www.hellhades.com",}' http://127.0.0.1:5000/test
-```
-
-
-For example, to save the response as a zip file named webspeedinsight_reports.zip, you can use:
-
-```bash
-curl -o webspeedinsight_reports.zip -X POST -H "Content-Type: application/json" -d '{"url": "https://www.hellhades.com"}' http://127.0.0.1:5000/test
-
-```
-
-Replace `"https://www.example.com"` with the URL you want to test, and `"repeat": 3` with the number of iterations.
-
-## Requirements
-
-The following Python packages are required to run the application:
-
-- Flask==2.0.2
-- Selenium==4.1.0
-
-You can install them using pip:
-
-```bash
-pip install -r requirements.txt
-```
-
-## Planned Features
-
-- Add support for collecting additional performance metrics
-- Implement graphical representation of performance metrics
-- Enhance error handling and response messages
+### Viewing Reports
+1. Open the Flask web interface in your browser:
+    ```
+        http://localhost:5000
+2. Follow the on-screen instructions to run tests and view performance reports.    

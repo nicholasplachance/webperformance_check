@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Report</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 800px;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    .loader {
+      border: 4px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 4px solid #3498db;
+      width: 30px;
+      height: 30px;
+      animation: spin 2s linear infinite;
+      margin: auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 220px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -110px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .tooltip .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .report-header {
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    .report-content {
+      padding: 20px;
+    }
+    .waterfall-table {
+      margin-top: 20px;
+      max-height: 300px;
+      overflow-y: auto;
+      width: 80vw;
+    }
+    .url-column {
+      max-width: 40vw;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+  <div class="report-header">
+    <h1>Test Report Summary</h1>
+    <p><strong>Average Task Duration (ms):</strong> {{ average_metrics.taskDuration }}</p>
+    <p><strong>Average TTFB (ms):</strong> {{ average_metrics.ttfb }}</p>
+    <p><strong>Average FCP (ms):</strong> {{ average_metrics.fcp }}</p>
+    <p><strong>Average LCP (ms):</strong> {{ average_metrics.lcp }}</p>
+    <p><strong>Average Heap Allocation (%):</strong> {{ average_metrics.heapAllocation }}</p>
+  </div>
+
+  <div class="report-content">
+    <h2>Individual Page Reports</h2>
+    {% for page in data %}
+      <h3 class="tooltip"><p>{{ page.title }}</p> <span class="tooltiptext">Click to see details</span></h3>
+      <div id="modal-{{ loop.index }}" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="document.getElementById('modal-{{ loop.index }}').style.display='none'">&times;</span>
+          <h1>Test Report for <a href="{{ page.url }}" target="_blank">{{ page.title }}</a></h1>
+          <p><strong>URL:</strong> <a href="{{ page.url }}" target="_blank">{{ page.url }}</a></p>
+          <p><strong>Timestamp:</strong> {{ page.timestamp }}</p>
+          <p><strong>Task Duration (ms):</strong> {{ page.taskDuration }}</p>
+          <p><strong>TTFB (ms):</strong> {{ page.ttfb }}</p>
+          <p><strong>FCP (ms):</strong> {{ page.fcp }}</p>
+          <p><strong>LCP (ms):</strong> {{ page.lcp }}</p>
+          <p><strong>Heap Allocation (%):</strong> {{ page.heapAllocation }}</p>
+          <h2>Network Requests (Waterfall)</h2>
+          <div class="waterfall-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>URL</th>
+                  <th>Method</th>
+                  <th>Type</th>
+                  <th>Start Time (ms)</th>
+                  <th>End Time (ms)</th>
+                  <th>Duration (ms)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for request in page.requests %}
+                  <tr>
+                    <td class="url-column">{{ request.url }}</td>
+                    <td>{{ request.method }}</td>
+                    <td>{{ request.type }}</td>
+                    <td>{{ request.startTime }}</td>
+                    <td>{{ request.endTime }}</td>
+                    <td>{{ request.duration }}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <a href="{{ url_for('index') }}">Run another test</a>
+
+  <script>
+    // Get all modals
+    var modals = document.getElementsByClassName("modal");
+
+    // When the user clicks the button, open the corresponding modal
+    var tooltips = document.getElementsByClassName("tooltip");
+    for (let i = 0; i < tooltips.length; i++) {
+      tooltips[i].onclick = function() {
+        modals[i].style.display = "flex";
+      }
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      for (let i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+          modals[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</body>
+</html>

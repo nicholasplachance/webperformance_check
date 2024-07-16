@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Performance Check</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 300px;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .loader {
+      border: 4px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 4px solid #3498db;
+      width: 30px;
+      height: 30px;
+      animation: spin 2s linear infinite;
+      margin: auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Web Performance Check</h1>
+  <form id="test-form" action="{{ url_for('run_test') }}" method="post">
+    <label for="base-url">Enter Base URL:</label>
+    <input type="text" id="base-url" name="base_url" required>
+    <button class="add-button" type="button" onclick="addPageInput()">Add Page</button>
+    <div id="pages-container"></div>
+    <button type="submit">Run Test</button>
+  </form>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <!-- Modal Structure -->
+  <div id="loadingModal" class="modal">
+    <div class="modal-content">
+      <div class="loader"></div>
+      <p id="modal-text">Running the test, please wait...</p>
+      <ul id="pages-list"></ul> <!-- New element to display pages -->
+    </div>
+  </div>
+
+  <script>
+    function addPageInput() {
+      const container = document.getElementById('pages-container');
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.name = 'pages[]';
+      input.placeholder = 'Enter additional page path (e.g., /about)';
+      container.appendChild(input);
+    }
+
+    document.getElementById('test-form').addEventListener('submit', function(event) {
+      // Prevent the form from submitting immediately
+      event.preventDefault();
+
+      // Get the base URL from the form input
+      var baseUrl = document.getElementById('base-url').value;
+
+      // Get all additional page paths entered by the user
+      var pagesInputs = document.getElementsByName('pages[]');
+      var pages = [];
+      for (var i = 0; i < pagesInputs.length; i++) {
+        if (pagesInputs[i].value.trim() !== '') {
+          pages.push(pagesInputs[i].value.trim());
+        }
+      }
+
+      // Prepare the text for modal display
+      var modalText = document.getElementById('modal-text');
+      var modalPagesList = document.getElementById('pages-list');
+      
+      // Clear previous content
+      modalPagesList.innerHTML = '';
+
+      // Update base URL in the modal text
+      modalText.textContent = `Running test for ${baseUrl}, please wait...`;
+
+      // Add base URL to the list
+      var baseUrlItem = document.createElement('li');
+      baseUrlItem.textContent = `Base URL: ${baseUrl}`;
+      modalPagesList.appendChild(baseUrlItem);
+
+      // Add additional pages to the list
+      pages.forEach(function(page) {
+        var pageItem = document.createElement('li');
+        pageItem.textContent = `Additional Page: ${page}`;
+        modalPagesList.appendChild(pageItem);
+      });
+
+      // Show the modal
+      var modal = document.getElementById('loadingModal');
+      modal.style.display = 'flex';
+
+      // Submit the form after preparing modal content
+      setTimeout(function() {
+        document.getElementById('test-form').submit();
+      }, 2000); // Adjust delay as needed for better user experience
+    });
+  </script>
+</body>
+</html>
