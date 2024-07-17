@@ -5,16 +5,12 @@ import os
 import validators
 import logging
 import statistics
-from flask import Flask, send_from_directory
 
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY", "supersecretkey")
 
 logging.basicConfig(level=logging.INFO)
 
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.errorhandler(400)
 def bad_request(error):
