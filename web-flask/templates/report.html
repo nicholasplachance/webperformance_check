@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Test Report</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-
-
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <style>
     .modal {
       display: none;
@@ -138,7 +136,7 @@
           <p><strong>LCP (ms):</strong> {{ page.lcp }}</p>
           <p><strong>Heap Allocation (%):</strong> {{ page.heapAllocation }}</p>
           <h2>Network Requests (Waterfall)</h2>
-          <!-- <div class="waterfall-table">
+          <div class="waterfall-table">
             <table>
               <thead>
                 <tr>
@@ -164,7 +162,7 @@
               </tbody>
             </table>
           </div>
-        </div> -->
+        </div>
       </div>
     {% endfor %}
   </div>
