@@ -1,27 +1,40 @@
 {
     "version": 2,
     "builds": [
-      { "src": "web-flask/app.py", "use": "@now/python" },
-      { "src": "scraper/index.js", "use": "@now/node" },
       {
-        "src": "web-flask",
-        "use": "@vercel/static-build",
-        "config": { "buildCommand": "pip install -r requirements.txt" }
+        "src": "web-flask/app.py",
+        "use": "@vercel/python",
+        "config": {
+          "maxLambdaSize": "15mb"
+        }
       },
       {
-        "src": "scraper",
-        "use": "@vercel/static-build",
-        "config": { "buildCommand": "npm install" }
+        "src": "scraper/scraper.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "web-flask/static/**",
+        "use": "@vercel/static"
       }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/web-flask/app.py" },
-      { "src": "/start-scraping", "dest": "/scraper/index.js" }
+      {
+        "src": "/static/(.*)",
+        "dest": "/web-flask/static/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/web-flask/app.py"
+      },
+      {
+        "src": "/run_test",
+        "methods": ["POST"],
+        "dest": "/web-flask/app.py"
+      }
     ],
     "env": {
       "FLASK_ENV": "production",
-      "SECRET_KEY": "<your-secret-key>",
-      "DATABASE_URL": "<your-database-url>"
+      "SECRET_KEY": "<your-secret-key>"
     }
   }
   
