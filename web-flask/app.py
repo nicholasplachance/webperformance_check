@@ -1,4 +1,3 @@
-# web-flask/app.py
 from flask import Flask, request, redirect, url_for, render_template, flash, jsonify
 import subprocess
 import json
@@ -40,7 +39,8 @@ def run_test():
         return redirect(url_for('index'))
 
     try:
-        result = subprocess.run(['node', '../scraper/scraper.js', json.dumps(urls)], capture_output=True, text=True)
+        node_path = subprocess.check_output(['which', 'node']).decode('utf-8').strip()
+        result = subprocess.run([node_path, '../scraper/scraper.js', json.dumps(urls)], capture_output=True, text=True)
         result.check_returncode()
         print('Scraper output:', result.stdout)
         return redirect(url_for('report'))
