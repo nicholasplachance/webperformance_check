@@ -39,7 +39,7 @@ def run_test():
         return redirect(url_for('index'))
 
     try:
-        node_path = subprocess.check_output(['which', 'node']).decode('utf-8').strip()
+        node_path = os.getenv('NODE_PATH', 'node')  # Use NODE_PATH environment variable if available
         result = subprocess.run([node_path, '../scraper/scraper.js', json.dumps(urls)], capture_output=True, text=True)
         result.check_returncode()
         print('Scraper output:', result.stdout)
