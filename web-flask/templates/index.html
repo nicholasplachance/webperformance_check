@@ -47,13 +47,13 @@
 </head>
 <body>
   <h1>Web Performance Check</h1>
-  <form id="test-form" action="{{ url_for('run_test') }}" method="post">
+  <form id="test-form" action="/run_test" method="post">
     <label for="base-url">Enter Base URL:</label>
     <input type="text" id="base-url" name="base_url" required>
     <button class="add-button" type="button" onclick="addPageInput()">Add Page</button>
     <div id="pages-container"></div>
     <button type="submit">Run Test</button>
-  </form>
+</form>
   {% with messages = get_flashed_messages() %}
     {% if messages %}
       <ul>
