@@ -5,12 +5,16 @@
         "src": "web-flask/app.py",
         "use": "@vercel/python",
         "config": {
-          "maxLambdaSize": "15mb"
+          "maxLambdaSize": "15mb",
+          "runtime": "python3.9" // or your specific Python version
         }
       },
       {
         "src": "scraper/scraper.js",
-        "use": "@vercel/node"
+        "use": "@vercel/node",
+        "config": {
+          "includeFiles": ["scraper/**"]
+        }
       },
       {
         "src": "web-flask/static/**",
@@ -23,18 +27,19 @@
         "dest": "/web-flask/static/$1"
       },
       {
-        "src": "/(.*)",
+        "src": "/run_test",
+        "methods": ["POST"],
         "dest": "/web-flask/app.py"
       },
       {
-        "src": "/run_test",
-        "methods": ["POST"],
+        "src": "/(.*)",
         "dest": "/web-flask/app.py"
       }
     ],
     "env": {
       "FLASK_ENV": "production",
-      "SECRET_KEY": "<your-secret-key>"
+      "SECRET_KEY": "<your-secret-key>",
+      "NODE_PATH": "/usr/local/bin/node"
     }
   }
   
