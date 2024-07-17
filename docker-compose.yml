@@ -1,0 +1,21 @@
+version: '3'
+services:
+  python-flask:
+    build:
+      context: .
+      dockerfile: ./web-flask/Dockerfile.python
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data  # Mount the data directory for persistence
+    environment:
+      - NODE_PATH=/app/scraper  # Set the Node.js path for communication
+
+  nodejs-scraper:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.node
+    volumes:
+      - ./scraper:/app/scraper  # Mount the scraper directory
+    environment:
+      - FLASK_HOST=python-flask  # Set Flask host for communication

@@ -7,7 +7,7 @@ import logging
 import statistics
 
 app = Flask(__name__)
-app.secret_key = os.getenv("SECRET_KEY", "supersecretkey")
+app.secret_key = 'supersecretkey'
 
 logging.basicConfig(level=logging.INFO)
 
@@ -39,8 +39,7 @@ def run_test():
         return redirect(url_for('index'))
 
     try:
-        node_path = os.getenv('NODE_PATH', 'node')  # Use NODE_PATH environment variable if available
-        result = subprocess.run([node_path, '../scraper/scraper.js', json.dumps(urls)], capture_output=True, text=True)
+        result = subprocess.run(['node', '../scraper/scraper.js', json.dumps(urls)], capture_output=True, text=True)
         result.check_returncode()
         print('Scraper output:', result.stdout)
         return redirect(url_for('report'))
@@ -58,6 +57,7 @@ def report():
         with open('../data/raw_metrics.json') as f:
             try:
                 data = json.load(f)
+                # Calculate averages
                 metrics = ['ttfb', 'fcp', 'lcp', 'taskDuration', 'heapAllocation']
                 average_metrics = {}
                 for metric in metrics:

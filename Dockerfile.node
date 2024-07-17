@@ -1,0 +1,20 @@
+# Use an official Node.js runtime as a parent image
+FROM node:14
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy only Node.js specific files
+COPY ./scraper/package.json /app/scraper/package.json
+COPY ./scraper/package-lock.json /app/scraper/package-lock.json
+
+# Install Node.js dependencies
+RUN npm install --prefix /app/scraper
+
+# Copy the rest of the application
+COPY ./scraper /app/scraper
+
+# Expose any ports the app needs (not necessary for scraper)
+
+# Command to run the Node.js application (scraper)
+CMD ["node", "scraper/index.js"]

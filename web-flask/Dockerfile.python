@@ -1,0 +1,28 @@
+# Use an official Python runtime as a parent image
+FROM python:3.8-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the requirements file first to leverage Docker caching
+COPY ./web-flask/requirements.txt /app/web-flask/requirements.txt
+
+# Install Python dependencies
+RUN pip install -r /app/web-flask/requirements.txt
+
+# Install Node.js and npm
+RUN apt-get update && \
+    apt-get install -y nodejs npm
+
+# Copy the rest of the application
+COPY . /app
+
+# Expose Flask port
+EXPOSE 5000
+
+# Set Flask environment variables
+ENV FLASK_APP=web-flask/app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+
+# Command to run the Flask application
+CMD ["flask", "run"]
