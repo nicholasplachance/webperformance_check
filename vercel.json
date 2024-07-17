@@ -1,11 +1,22 @@
 {
     "version": 2,
     "builds": [
-      { "src": "web-flask/app.py", "use": "@now/python" }
+      { "src": "web-flask/app.py", "use": "@now/python" },
+      { "src": "scraper/index.js", "use": "@now/node" },
+      {
+        "src": "web-flask",
+        "use": "@vercel/static-build",
+        "config": { "buildCommand": "pip install -r requirements.txt" }
+      },
+      {
+        "src": "scraper",
+        "use": "@vercel/static-build",
+        "config": { "buildCommand": "npm install" }
+      }
     ],
     "routes": [
-      { "src": "/static/(.*)", "dest": "/static/$1" },
-      { "src": "/(.*)", "dest": "web-flask/app.py" }
+      { "src": "/(.*)", "dest": "/web-flask/app.py" },
+      { "src": "/start-scraping", "dest": "/scraper/index.js" }
     ],
     "env": {
       "FLASK_ENV": "production",
