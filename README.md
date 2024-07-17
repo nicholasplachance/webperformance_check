@@ -10,6 +10,10 @@ The Web Performance Check Tool automates the process of testing web performance.
 
 ## Project Structure
     webperformance_check/
+    ├── usr/
+    |   ├── local
+    |       ├── bin
+    |           ├── node       
     ├── analysis-python/
     │ ├── analyze_data.py
     │ ├── requirements.txt
