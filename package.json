@@ -1,0 +1,6 @@
+{
+    "scripts": {
+      "build": "echo 'Nothing to build for Flask app.'"
+    }
+  }
+  
