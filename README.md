@@ -11,9 +11,9 @@ The Web Performance Check Tool automates the process of testing web performance.
 ## Project Structure
     webperformance_check/
     ├── usr/
-    |   ├── local
-    |       ├── bin
-    |           ├── node       
+    │ ├── local
+    │ ├── bin
+    │ ├── node
     ├── analysis-python/
     │ ├── analyze_data.py
     │ ├── requirements.txt
@@ -34,6 +34,8 @@ The Web Performance Check Tool automates the process of testing web performance.
     │ │ ├── index.html
     │ │ ├── report.html
     ├── README.md
+    ├── requirements.txt
+    ├── Procfile
 
 
 ## Prerequisites
