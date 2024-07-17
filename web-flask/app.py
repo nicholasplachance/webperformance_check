@@ -39,9 +39,8 @@ def run_test():
         return redirect(url_for('index'))
 
     try:
-        scraper_command = './run_scraper.sh'
-        urls_json = json.dumps(urls)
-        result = subprocess.run([scraper_command, urls_json], capture_output=True, text=True, shell=True)
+        node_path = os.getenv('NODE_PATH', 'node')  # Use NODE_PATH environment variable if available
+        result = subprocess.run([node_path, '../scraper/scraper.js', json.dumps(urls)], capture_output=True, text=True)
         result.check_returncode()
         print('Scraper output:', result.stdout)
         return redirect(url_for('report'))
