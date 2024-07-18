@@ -7,10 +7,9 @@ import logging
 import statistics
 
 app = Flask(__name__)
-app.secret_key = os.getenv("SECRET_KEY", "supersecretkey")
+app.secret_key = 'supersecretkey'
 
 logging.basicConfig(level=logging.INFO)
-
 
 @app.errorhandler(400)
 def bad_request(error):
@@ -40,9 +39,7 @@ def run_test():
         return redirect(url_for('index'))
 
     try:
-        scraper_command = './run_scraper.sh'
-        urls_json = json.dumps(urls)
-        result = subprocess.run([scraper_command, urls_json], capture_output=True, text=True, shell=True)
+        result = subprocess.run(['node', '../scraper/scraper.js', json.dumps(urls)], capture_output=True, text=True)
         result.check_returncode()
         print('Scraper output:', result.stdout)
         return redirect(url_for('report'))
@@ -60,6 +57,7 @@ def report():
         with open('../data/raw_metrics.json') as f:
             try:
                 data = json.load(f)
+                # Calculate averages
                 metrics = ['ttfb', 'fcp', 'lcp', 'taskDuration', 'heapAllocation']
                 average_metrics = {}
                 for metric in metrics:
